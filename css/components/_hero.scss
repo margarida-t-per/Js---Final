@@ -1,0 +1,23 @@
+
+
+.hero {
+
+    height: 600px;
+    background-image: url("../assets/carousel/splash/splash-1.webp");
+    background-size: cover;
+    background-position: center;
+    padding-top: 70px; 
+    @include flex(default, default, default);
+
+    &__items {
+
+    @include col(10);
+    margin: 0 auto;
+    }
+
+    @media screen and (max-width: 780px) {
+        @include flex(default, default, flex-end);
+                
+        }
+
+}

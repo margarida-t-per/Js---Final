@@ -1,0 +1,78 @@
+.banner {
+  background-color: $color--secondary;
+
+  @include flex(initial, initial, initial);
+
+  &--s {
+    min-height: 300px;
+  }
+
+  &--l {
+    min-height: 600px;
+    @media screen and (max-width: 780px) {
+      min-height: 450px;
+    }
+  }
+  &--3-1 {
+    @include col(9);
+    margin: 0 auto;
+    @include flex(initial, initial, center);
+    @media screen and (max-width: 780px) {
+      @include col(12);
+    }
+  }
+
+  .icon__box {
+    @include flex(initial, initial, center);
+
+    @include col(4);
+    @media screen and (max-width: 780px) {
+      @include col(12);
+    }
+
+    &__icon {
+      display: inline-block;
+      @include col(3);
+
+      img {
+        @include col(12);
+      }
+    }
+
+    &__description {
+      display: inline-block;
+      @include col(9);
+    }
+  }
+
+  .icon__banner {
+    background-color: #f7eee3;
+    height: 200px;
+
+    .icon__box {
+      &__icon img {
+        width: 100%;
+      }
+      &__description p {
+        display: block;
+      }
+    }
+  }
+
+  &__nomad {
+    margin: auto;
+    background-image: url("../assets/nomad-bg.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+
+    &__content {
+      padding-top: 70px;
+      @include col(10);
+      margin: 0 auto;
+      @media screen and (max-width: 780px) {
+        @include col(12);
+      }
+    }
+  }
+}

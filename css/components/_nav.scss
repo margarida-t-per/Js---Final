@@ -1,0 +1,81 @@
+@import "../partials/colors";
+@import "../partials/typography";
+
+.nav {
+  background-color: $color--bg--white;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
+  @include flex(center, space-between, initial);
+  z-index: 1;
+
+  &__logo img {
+    width: 150px;
+    display: inline-block;
+  }
+
+  &__burger {
+    display: none;
+
+    img {
+      width: 30px;
+      height: 25px;
+    }
+
+    @media screen and (max-width: 780px) {
+      @include flex(center, initial, initial);
+    }
+  }
+
+  &__items {
+    @include col(5);
+    @include flex(center, space-between, initial);
+    @media screen and (max-width: 780px) {
+      display: none;
+    }
+  }
+  &__item {
+    @include flex(center, initial, center);
+
+    &__label {
+      @include flex(center, initial, center);
+      height: 70px;
+    }
+
+    &__dropdown {
+      z-index: 0;
+      display: none;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 70px 20px 20px 20px;
+    }
+  }
+  &__item:hover {
+    &__label {
+      color: $color--bg--gray;
+    }
+
+    .nav__item__dropdown {
+      @include flex(initial, flex-start, initial);
+      background-color: $color--bg--white;
+      z-index: -1;
+
+      .dropdown__item {
+        @include col(3);
+        display: inline-block;
+      }
+    }
+
+    .nav__item__dropdown:hover {
+      @include flex(initial, flex-start, initial);
+      background-color: $color--bg--white;
+
+      .dropdown__item {
+        @include col(3);
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import "./variables";
+
+[class*="col-"] {
+	box-sizing: border-box;
+	
+
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: $gap;
+
+	
+	&--left{
+	justify-content: flex-start;
+	}
+	&--right{
+		justify-content: flex-end;
+		}
+		&--between{
+				justify-content: space-between;
+				}
+				&--middle{
+					align-content: center;
+						}
+
+}
+
+
+.column {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+
+@for $i from 1 through 12 {
+	.col-lg-#{$i} {
+		width: calc(100% / 12 * $i  - ($gap * (12 / $i - 1 ) / (12 /$i)));
+	}
+} 
+
+@media screen and (max-width: 1024px) {
+	@for $i from 6 through 12 {
+		.col-lg-#{$i} {
+			width: calc(100% / 12 * $i  - ($gap * (12 / $i - 1 ) / (12 /$i)));
+		}
+	}
+}
+
+
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+}

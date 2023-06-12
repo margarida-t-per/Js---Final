@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Search</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="functions_search.js"></script>
+  </head>
+
+  <body>
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/edit-extended-logo.png" />
+      </a>
+      <div class="nav__items">
+        <div class="nav__item">
+          <a href="#" class="nav__item__label"> Seating </a>
+          <div class="nav__item__dropdown">
+            <div class="dropdown__item">
+              <h5>Shop by Category</h5>
+              <ul>
+                <li><a href="#">Sectionals</a></li>
+                <li><a href="#">Sofas</a></li>
+                <li><a href="#">Loveseats</a></li>
+                <li><a href="#">Accent Chairs</a></li>
+                <li><a href="#">Sleepers</a></li>
+                <li><a href="#">Sleep Kits</a></li>
+                <li><a href="#">Ottomans</a></li>
+                <li><a href="#">Seating Accessories</a></li>
+                <li><a href="#">All Seating</a></li>
+              </ul>
+            </div>
+            <div class="dropdown__item">
+              <h5>Shop by Collection</h5>
+              <ul>
+                <li><a href="#">Nomad Collection</a></li>
+                <li><a href="#">Field Collection</a></li>
+                <li><a href="#">Range Collection</a></li>
+                <li><a href="#">Union Collection</a></li>
+                <li><a href="#">NEW</a></li>
+                <li><a href="#">Compare Collections</a></li>
+              </ul>
+            </div>
+            <div class="dropdown__item">
+              <h5>Shop by Upholstery</h5>
+              <ul>
+                <li><a href="#">Performance Fabric Seating</a></li>
+                <li><a href="#">Italian Leather Seating</a></li>
+                <li><a href="#">Performance Velvet Seating</a></li>
+                <li><a href="#">All Seating</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="nav__item">
+          <a href="#" class="nav__item__label"> Living Room </a>
+          <div class="nav__item__dropdown">
+            <div class="dropdown__item">
+              <h5>Seating</h5>
+              <ul>
+                <li><a href="#">Sectionals</a></li>
+                <li><a href="#">Sofas</a></li>
+                <li><a href="#">Loveseats</a></li>
+                <li><a href="#">Accent Chairs</a></li>
+                <li><a href="#">Sleepers</a></li>
+                <li><a href="#">Sleep Kits</a></li>
+                <li><a href="#">Ottomans</a></li>
+                <li><a href="#">Seating Accessories</a></li>
+                <li><a href="#">All Seating</a></li>
+              </ul>
+            </div>
+            <div class="dropdown__item">
+              <h5>Tables, Carts & Benches</h5>
+              <ul>
+                <li><a href="#">Coffee Tables</a></li>
+                <li><a href="#">Side Tables</a></li>
+                <li><a href="#">Bar Carts</a></li>
+                <li><a href="#">Benches</a></li>
+                <li><a href="#">All Tables & Carts</a></li>
+              </ul>
+            </div>
+            <div class="dropdown__item">
+              <h5>Accessories</h5>
+              <ul>
+                <li><a href="#">Seating Accessories</a></li>
+                <li><a href="#">Throw Pillows</a></li>
+                <li><a href="#">Throw Blankets</a></li>
+                <li><a href="#">Trays</a></li>
+                <li><a href="#">Lighting</a></li>
+                <li><a href="#">Clearence</a></li>
+                <li><a href="#">All Accessories</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="nav__item">
+          <a href="#" class="nav__item__label"> Outdoor </a>
+          <div class="nav__item__dropdown">
+            <ul>
+              <li><a href="#">Smtg</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="nav__item">
+          <a href="#" class="nav__item__label"> Storage </a>
+          <div class="nav__item__dropdown">
+            <ul>
+              <li><a href="#">Smtg</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav__burger">
+        <a href="#">
+          <img src="assets/icons/icon__burger.png" alt="icon-1" />
+        </a>
+      </div>
+    </nav>
+    <main>
+      <section
+        id="highlight__carousel"
+        class="section"
+        style="width: 95vw !important"
+      >
+        <div class="section__title">
+          <h3>Best Rated Products</h3>
+        </div>
+        <div id="highlight__carousel_list" class="categories__list"></div>
+        <button onclick="carouselPrev()"><</button>
+        <button onclick="carouselNext()">></button>
+      </section>
+
+      <section class="section section__products_list">
+        <div class="section__title_product">
+          <h3>Search any product</h3>
+        </div>
+        <input type="text" onkeyup="procuraProduto(event)" />
+        <div id="products__list--search" class="products__list"></div>
+      </section>
+      <section class="section section__products_list">
+        <div class="section__title_product">
+          <h3>Clever designs, delivered free</h3>
+        </div>
+        <div class="section__description">
+          <p>
+            The main feature of any living room is always going to be the
+            seating. Pick and choose your seating styles to build the perfect
+            place to relax. Unwind by yourself, spend time with your family, or
+            entertain guests, all in ultimate comfort.
+          </p>
+        </div>
+        <div id="products__list" class="products__list"></div>
+      </section>
+    </main>
+    <footer>
+      <section class="section footer footer--gray">
+        <div class="footer__contact">
+          <div class="newsletter">
+            <form id="form__newsletter" class="" action="">
+              <input
+                type="email"
+                placeholder="Sign up for enthralling couch reads"
+              />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+          <div class="social">
+            <div class="social__icons">
+              <img src="assets/socials/icons8-youtube.svg" alt="icon-1" />
+            </div>
+            <div class="social__icons">
+              <img src="assets/socials/icons8-instagram.svg" alt="icon-1" />
+            </div>
+            <div class="social__icons">
+              <img src="assets/socials/icons8-facebook.svg" alt="icon-1" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section footer footer--black">
+        <div class="footer__lists">
+          <div class="footer__list">
+            <h5>Shopping Services</h5>
+            <ul>
+              <li><a href="#">Schedule Consultation</a></li>
+              <li><a href="#">Showrooms</a></li>
+              <li><a href="#">Trade Program</a></li>
+              <li><a href="#">Outlet</a></li>
+            </ul>
+          </div>
+          <div class="footer__list">
+            <h5>About</h5>
+            <ul>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#"> Reviews</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Financing</a></li>
+              <li><a href="#">Patents</a></li>
+              <li><a href="#">Our Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer__list">
+            <h5>Resources</h5>
+            <ul>
+              <li><a href="#">Look Up Order Status</a></li>
+              <li><a href="#">Assembly Instructions</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Shipping & Delivery</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Refer a Friend</a></li>
+            </ul>
+          </div>
+          <div class="">
+            <h5>Contact Customer Experience</h5>
+            <ul>
+              <li><a href="#">Email: support@template.com</a></li>
+              <li><a href="#"></a>Text: 224-628-7769</li>
+              <li>Hours:</li>
+              <li>Monday to Friday — 10a to 8p EST</li>
+              <li>Saturday to Sunday — 10a to 2p EST</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <div class="footer__extras">
+            <span class="footer__trademark"> © 2023 Template </span>
+            <span><a href="#">Terms</a> </span>
+            <span>-</span>
+            <span><a href="#">Accessibility</a> </span>
+            <span>-</span>
+            <span><a href="#">Sitemap</a> </span>
+            <span>-</span>
+            <span><a href="#">Privacy</a> </span>
+          </div>
+          <div class="footer__address">
+            <span>15 W 27th Street, 9th Floor New York, NY, 10001</span>
+          </div>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>

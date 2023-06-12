@@ -1,0 +1,16 @@
+$gap : 8px;
+
+
+@mixin col($num) {
+	width: calc(100% / 12 * $num  - ($gap * (12 / $num - 1 ) / (12 /$num)));
+
+} 
+
+@mixin flex ($align__c, $justify__c, $align__i) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+    align-content: $align__c;
+    justify-content: $justify__c;
+    align-items: $align__i;
+} 

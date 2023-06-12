@@ -1,0 +1,39 @@
+$categories: "seating", "outdoor", "storage", "bedroom", "tables", "rugs",
+  "other-1", "other-2", "other-3", "other-4", "other-5", "other-6", "other-7",
+  "other-8", "other-9";
+
+.category {
+  @include flex(initial, initial, flex-end);
+  padding: 15px;
+  border-radius: 4px;
+
+  &--s {
+    height: 150px;
+  }
+
+  &--m {
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    height: 200px;
+  }
+
+  &--l {
+    aspect-ratio: 1 / 2;
+  }
+
+  @each $category in $categories {
+    &--#{$category} {
+      background-image: url("../assets/categories/category-#{$category}.png");
+    }
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__name {
+    color: black;
+  }
+}
+
+a {
+  text-decoration: none;
+}

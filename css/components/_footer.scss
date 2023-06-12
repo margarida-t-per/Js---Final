@@ -1,0 +1,101 @@
+@import "../partials/colors";
+@import "../partials/variables";
+
+.footer {
+  margin: 0;
+
+  &--gray {
+    background-color: $color--bg--gray;
+  }
+
+  &__contact {
+    @include flex(initial, space-between, initial);
+  }
+
+  .newsletter {
+    @media screen and (max-width: 780px) {
+      width: 100%;
+    }
+    form {
+      display: inline-block;
+      border: solid 1px $color--secondary;
+      border-radius: 4px;
+      @media screen and (max-width: 780px) {
+        border: none;
+        background-color: transparent;
+        @include col(12);
+      }
+    }
+    input[type="email"] {
+      border: none;
+      width: 200px;
+      background-color: $color--bg--gray;
+      padding: 12px 60px 12px 17px;
+      margin: 0;
+
+      @media screen and (max-width: 780px) {
+        border: solid 1px $color--secondary;
+        display: block;
+        width: calc(100% - 17px);
+        padding: 12px 0 12px 17px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+    }
+    button[type="submit"] {
+      border: none;
+      display: inline-block;
+      color: black;
+      background-color: $color--secondary;
+      padding: 12px 24px;
+      margin: 0;
+      @media screen and (max-width: 780px) {
+        border: solid 1px $color--secondary;
+        display: block;
+        @include col(12);
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .social {
+    @include flex(initial, space-between, initial);
+    @media screen and (max-width: 780px) {
+      display: none;
+    }
+  }
+
+  &--black {
+    background-color: $color--bg--black;
+  }
+
+  &__lists {
+    @include flex(initial, space-between, initial);
+    margin-bottom: 60px;
+  }
+  &__list {
+    @media screen and (max-width: 780px) {
+      @include col(12);
+      margin-bottom: 25px;
+    }
+  }
+
+  &__bottom {
+    @include flex(initial, space-between, initial);
+  }
+
+  &__extras {
+    @include col(6);
+    @include flex(initial, initial, initial);
+
+    @media screen and (max-width: 780px) {
+      @include col(12);
+      margin-bottom: 25px;
+    }
+  }
+  &__trademark {
+    @include col(12);
+  }
+
+  color: white;
+}

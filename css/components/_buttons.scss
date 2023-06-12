@@ -1,0 +1,27 @@
+@import "../partials/colors";
+@import "../partials/typography";
+
+.btn {
+  padding: 16px 24px;
+  border: 0;
+  border-radius: 4px;
+  background-color: $color--primary;
+  text-transform: uppercase;
+  color: black;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nomad__btn {
+  font-size: 12px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: black;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

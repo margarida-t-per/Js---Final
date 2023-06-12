@@ -1,0 +1,29 @@
+@import "../partials/colors";
+@import "../partials/variables";
+
+.products__list {
+  margin: 0 auto;
+  @include flex(initial, center, initial);
+
+  &__item {
+    @include col(4);
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 780px) {
+      @include col(12);
+    }
+    &__img {
+      height: 250px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@for $i from 1 through 8 {
+  .img--#{$i} {
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+  }
+}
